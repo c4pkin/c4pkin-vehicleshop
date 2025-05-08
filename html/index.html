@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c4pkin-vehicleshop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="vehicle-shop" class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-car"></i>
+                <h1 id="store-name">c4pkin Developments</h1>
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="vehicle-search" placeholder="Araç ara...">
+            </div>
+            <div class="actions">
+                <button id="cart-button" class="btn btn-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Sipariş</span>
+                    <span id="cart-count" class="cart-count">0</span>
+                </button>
+                <button id="close-shop" class="btn btn-close">
+                    <i class="fas fa-times"></i>
+                    <span>Kapat</span>
+                </button>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <aside class="sidebar">
+                <h3>Kategoriler</h3>
+                <ul id="category-list" class="category-list">
+                    <li>
+                        <div class="category-item active" data-category="all">
+                            <i class="fas fa-list"></i>
+                            <span>Tüm Araçlar</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="category-item" data-category="super">
+                            <i class="fas fa-rocket"></i>
+                            <span>Süper</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="category-item" data-category="sport">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Sport</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="category-item" data-category="sedan">
+                            <i class="fas fa-car-alt"></i>
+                            <span>Sedan</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="category-item" data-category="coupe">
+                            <i class="fas fa-car-side"></i>
+                            <span>Coupe</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="category-item" data-category="compact">
+                            <i class="fas fa-car-alt"></i>
+                            <span>Classic</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="category-item" data-category="offroad">
+                            <i class="fas fa-road"></i>
+                            <span>Off-Road</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="category-item" data-category="suv">
+                            <i class="fas fa-truck"></i>
+                            <span>Suv</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="category-item" data-category="van">
+                            <i class="fas fa-truck-pickup"></i>
+                            <span>Van</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="category-item" data-category="motor">
+                            <i class="fa fa-motorcycle"></i>
+                            <span>Motorsycles</span>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
+            
+            <div class="vehicles-container">
+                <div class="category-header">
+                    <h2 id="current-category">Tüm Araçlar</h2>
+                </div>
+                
+                <div id="vehicles-grid" class="vehicles-grid">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">
+                    <i class="fas fa-shopping-cart"></i>
+                    Sipariş
+                </h3>
+                <button id="close-cart" class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items" class="cart-items">
+                    <!-- Sepet öğeleri burada dinamik olarak oluşturulacak -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <span>Toplam:</span>
+                    <span id="cart-total-amount" class="total-amount">0 ₺</span>
+                </div>
+                <button id="checkout-button" class="btn-checkout">Ödeme Yap</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">
+                    <i class="fas fa-credit-card"></i>
+                    Ödeme Yöntemi
+                </h3>
+                <button id="close-payment" class="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p style="text-align: center; color: var(--text); margin-bottom: 20px;">
+                    Satın alma işlemini tamamlamak için ödeme yöntemi seçin.
+                </p>
+                <div class="payment-methods">
+                    <button id="bank-payment" class="payment-method">
+                        <i class="fas fa-university"></i>
+                        <span>Banka Transferi</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
